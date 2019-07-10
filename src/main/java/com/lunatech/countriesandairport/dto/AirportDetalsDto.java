@@ -1,43 +1,73 @@
 package com.lunatech.countriesandairport.dto;
 
+import java.util.List;
+
 public class AirportDetalsDto {
 
 	
-	private String airportIdentifier;
+	private String id;
 	
-	private String airportName;
+	private String ident;
 	
-	private int numberOfRunways;
+	private String iso_country;
+	
+	private String name;
+	
+	private  List<Runways> noOfRunways;
 
-	public String getAirportIdentifier() {
-		return airportIdentifier;
+	public int getRunways() { return noOfRunways.size(); }
+	 
+
+	public void setRunways(List<Runways> noOfRunways) {
+		this.noOfRunways = noOfRunways;
 	}
 
-	public void setAirportIdentifier(String airportIdentifier) {
-		this.airportIdentifier = airportIdentifier;
+	public String getId() {
+		return id;
 	}
 
-	public String getAirportName() {
-		return airportName;
+	public void setId(String id) {
+		this.id = id;
 	}
 
-	public void setAirportName(String airportName) {
-		this.airportName = airportName;
+	public String getIdent() {
+		return ident;
 	}
 
-	public int getNumberOfRunways() {
-		return numberOfRunways;
+	public void setIdent(String ident) {
+		this.ident = ident;
 	}
 
-	public void setNumberOfRunways(int numberOfRunways) {
-		this.numberOfRunways = numberOfRunways;
+	public String getIso_country() {
+		return iso_country;
 	}
+
+	public void setIso_country(String iso_country) {
+		this.iso_country = iso_country;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/*
+	 * public int getNoOfRunways() { return noOfRunways = runways.size(); }
+	 */
+
+	
+
 
 	@Override
 	public String toString() {
-		return "AirportDetalsDto [airportIdentifier=" + airportIdentifier + ", airportName=" + airportName
-				+ ", numberOfRunways=" + numberOfRunways + "]";
+		return "AirportDetalsDto [id=" + id + ", ident=" + ident + ", iso_country=" + iso_country + ", name=" + name
+				+ "]";
 	}
+
+
 	
 	
 }

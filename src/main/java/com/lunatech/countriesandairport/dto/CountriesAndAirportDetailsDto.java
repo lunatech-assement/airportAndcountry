@@ -5,7 +5,7 @@ public class CountriesAndAirportDetailsDto {
 	private String countryName;
 	
 	private AirportDetalsDto airportDetails;
-
+	
 	public String getCountryName() {
 		return countryName;
 	}
@@ -24,7 +24,7 @@ public class CountriesAndAirportDetailsDto {
 
 	@Override
 	public String toString() {
-		return "CountriesDto [countryName=" + countryName + ", airportDetails=" + airportDetails + "]";
+		return "CountriesAndAirportDetailsDto [countryName=" + countryName + ", airportDetails=" + airportDetails + "]";
 	}
 	
 	
