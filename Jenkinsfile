@@ -47,8 +47,8 @@ node(label:'docker') {
        sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.33.110 ${dockerRun}"
      }
    }
-   
-				    }
+        }
+    }
 		    catch(err) {
 		        currentBuild.result = 'FAILED'
 		        println(err.toString())
