@@ -49,12 +49,12 @@ public class CountryAirportServiceImplementation implements CountryAirportServic
 		List<AirportDetalsDto> airportList = new ArrayList<AirportDetalsDto>();
 
 		try {
-		log.info("COUNTRY_SERVICE_URL-->"+COUNTRY_SERVICE_URI);
+		log.info("Send Request To Country Service-->"+COUNTRY_SERVICE_URI);
 		ResponseEntity<List<CountriesDto>> responseListCountry  = restTemplate.exchange(COUNTRY_SERVICE_URI, HttpMethod.GET, null,
 		new ParameterizedTypeReference<List<CountriesDto>>() {});
 		countryList = responseListCountry.getBody();
 
-		log.info("AIRPORT_SERVICE_URL-->"+AIRPORT_SERVICE_URI);
+		log.info("Send Request To Airport Service-->"+AIRPORT_SERVICE_URI);
 		ResponseEntity<List<AirportDetalsDto>> responseListAirport = restTemplate.exchange(AIRPORT_SERVICE_URI, HttpMethod.GET, null,
 		new ParameterizedTypeReference<List<AirportDetalsDto>>() {});
 		airportList = responseListAirport.getBody();
@@ -112,10 +112,6 @@ public class CountryAirportServiceImplementation implements CountryAirportServic
 		log.info("Exception Occured: "+e.getMessage());
 
 		}
-
-			
-			
-			
 		return countryAndAirportList;
 	}
 	
