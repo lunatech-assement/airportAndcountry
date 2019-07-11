@@ -35,7 +35,7 @@ public class CountryAirportServiceImplementation implements CountryAirportServic
 	String COUNTRY_SERVICE_URI;
 	
 	@Value("${airport.service.url}")
-	String AIRPORT_SERVICE_URL;
+	String AIRPORT_SERVICE_URI;
 
 	@Override
 	public  List<CountriesAndAirportDetailsDto> getCountryAndAirportDetails(int runwayMinimum) {
@@ -54,8 +54,8 @@ public class CountryAirportServiceImplementation implements CountryAirportServic
 		new ParameterizedTypeReference<List<CountriesDto>>() {});
 		countryList = responseListCountry.getBody();
 
-		log.info("COUNTRY_SERVICE_URL-->"+AIRPORT_SERVICE_URL);
-		ResponseEntity<List<AirportDetalsDto>> responseListAirport = restTemplate.exchange(AIRPORT_SERVICE_URL, HttpMethod.GET, null,
+		log.info("AIRPORT_SERVICE_URL-->"+AIRPORT_SERVICE_URI);
+		ResponseEntity<List<AirportDetalsDto>> responseListAirport = restTemplate.exchange(AIRPORT_SERVICE_URI, HttpMethod.GET, null,
 		new ParameterizedTypeReference<List<AirportDetalsDto>>() {});
 		airportList = responseListAirport.getBody();
 
